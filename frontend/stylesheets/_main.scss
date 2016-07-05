@@ -1,25 +1,8 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require uikit.ruikit
- *= require_self
- */
-@import 'compass';
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
-@import 'modules/_variables';
-@import 'modules/_ruikit_override';
-@import 'modules/_pygments';
-@import 'modules/_codemirror';
+@import './modules/_variables';
+@import './modules/_uikit.ruikit';
+@import './modules/_ruikit_override';
+@import './modules/_pygments';
+@import './modules/_codemirror';
 
 html, body {
   height: 100%;
@@ -57,9 +40,9 @@ q, blockquote {
       background: $base-color-mid-dark;
       color: #fff;
 
-      @include input-placeholder {
-        color: $base-color-light;
-      }
+      //@include input-placeholder {
+      //  color: $base-color-light;
+      //}
     }
   }
 
@@ -416,7 +399,7 @@ q, blockquote {
         padding: 0 5px;
         border-left: 1px solid rgba(255, 255, 255, .5);
         text-align: center;
-        @include box-sizing(border-box);
+        box-sizing: border-box;
         &:first-child {
           border-left: 0;
         }
@@ -465,7 +448,7 @@ q, blockquote {
   height: 100%;
   padding: 4px;
   padding-top: 44px;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 
   .editor-header {
     position: absolute;
@@ -473,7 +456,7 @@ q, blockquote {
     top: 40px;
     width: 100%;
     padding: 4px;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 
     .editor-title {
       padding: 4px;
@@ -542,7 +525,7 @@ q, blockquote {
   .editor-main {
     height: 100%;
     padding: (92px + 4px) 4px (38px + 4px);
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     overflow: hidden;
 
     .editor-pane {
@@ -551,7 +534,7 @@ q, blockquote {
       width: 50%;
       height: 100%;
       border: 1px solid #ccc;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
 
       .editor-pane-header {
         position: absolute;
@@ -561,7 +544,7 @@ q, blockquote {
         font-size: 14px;
         line-height: 28px;
         background: #f4f4f4;
-        @include box-sizing(border-box);
+        box-sizing: border-box;
 
         .editor-pane-title {
           color: #999;
@@ -596,7 +579,7 @@ q, blockquote {
       .editor-pane-content {
         height: 100%;
         padding-top: 38px;
-        @include box-sizing(border-box);
+        box-sizing: border-box;
 
         textarea {
           display: block;
@@ -619,7 +602,7 @@ q, blockquote {
         width: 100%;
         height: 100%;
         padding: 10px;
-        @include box-sizing(border-box);
+        box-sizing: border-box;
         overflow: auto;
       }
     }
@@ -632,7 +615,7 @@ q, blockquote {
     width: 100%;
     height: 38px;
     padding: 0 8px;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 
     .uk-button-group {
       margin-left: 5px;

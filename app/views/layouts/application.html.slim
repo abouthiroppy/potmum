@@ -80,5 +80,7 @@ html
 
     / js
     = javascript_include_tag 'application'
+    script src=webpack_path('vendor.js')
+    script src=webpack_path('bundle.js')
     javascript:
       $(".uk-alert").uk('alert');
