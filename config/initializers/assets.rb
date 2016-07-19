@@ -11,7 +11,7 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 begin
-  path = Rails.root.join('public', 'webpack', 'webpack-manifest.json')
+  path = Rails.root.join('public', 'assets', 'webpack-manifest.json')
   if File.exist?(path)
     Rails.application.config.assets.webpack_manifest = JSON.parse(File.read(path))
   end

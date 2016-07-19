@@ -9,7 +9,7 @@ var paths = (function () {
         root: rootPath,
         nodeModules: path.join(rootPath, './node_modules/'),
         src: path.join(rootPath, './frontend'),
-        output: path.join(rootPath, './public')
+        output: path.join(rootPath, './public/assets')
     };
 })();
 
