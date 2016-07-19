@@ -16,10 +16,3 @@ begin
     Rails.application.config.assets.webpack_manifest = JSON.parse(File.read(path))
   end
 end
-
-require 'rack/reverse_proxy'
-::Rails.application.config.middleware.use Rack::ReverseProxy do
-  reverse_proxy '/webpack', 'http://localhost:8080'
-  #reverse_proxy /^\/webpack\/(.+)$/, 'http://localhost:8080/$1'
-end
-

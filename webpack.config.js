@@ -1,4 +1,5 @@
 var path = require('path');
+var glob = require('glob');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
 
@@ -18,6 +19,7 @@ var fileNameRule = isProduction ? '[name]-[hash]' : '[name]';
 module.exports = {
     entry: {
         bundle: [
+            path.join(paths.src, '/assets.js'),
             path.join(paths.nodeModules, '/normalize.css/normalize.css'),
             path.join(paths.nodeModules, '/font-awesome/css/font-awesome.css'),
             path.join(paths.src, '/index.scss'),
@@ -29,7 +31,7 @@ module.exports = {
     },
     output: {
         path: paths.output,
-        publicPath: '/webpack/',
+        publicPath: '/assets/',
         filename: fileNameRule + '.js',
     },
     module: {

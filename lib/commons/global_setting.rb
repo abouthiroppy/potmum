@@ -155,4 +155,8 @@ module GlobalSetting
     n = ENV['ATTACHMENT_FILE_S3_FORCE_PATH_STYLE']
     n ? (n.to_i > 0) : nil
   end
+
+  def self.development_asset_server
+    ENV['DEVELOPMENT_ASSET_SERVER'] || 'http://localhost:8080/assets'
+  end
 end

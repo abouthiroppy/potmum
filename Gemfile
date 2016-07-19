@@ -47,8 +47,6 @@ gem 'html-pipeline-nico_link'
 gem 'dotenv-rails'
 gem 'foreman'
 
-gem 'rack-reverse-proxy'
-
 group :production do
   gem 'puma'
   gem 'pg'

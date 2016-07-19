@@ -5,7 +5,7 @@ module ApplicationHelper
     if manifest && manifest[path]
       "#{host}/webpack/#{manifest[path]}"
     else
-      "#{host}/webpack/#{path}"
+      "#{GlobalSetting.development_asset_server}/#{path}"
     end
   end
 

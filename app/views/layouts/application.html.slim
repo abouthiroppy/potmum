@@ -6,7 +6,7 @@ html
     nav.global-header.uk-navbar
       div class=(content_for?(:full_mode) ? 'uk-width-1-1' : 'uk-container uk-container-center')
         a.uk-navbar-brand href='/'
-          img src=asset_path('potmum-logo.png') width=129 height=24 alt='Potmum'
+          img src=webpack_path('potmum-logo.png') width=129 height=24 alt='Potmum'
         .uk-navbar-content
           form.uk-form.uk-margin-remove.uk-display-inline-block action=search_path method='get'
             input type='search' name='q' value=@search_word placeholder='キーワードを入力'
