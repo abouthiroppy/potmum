@@ -246,7 +246,7 @@ module.exports = (function () {
                 url: '',
                 modePreview: false,
                 preview_html: '',
-                count: 2048,
+                maxCount: 2048,
                 sendingFlag: false,
             },
             computed: {
@@ -256,7 +256,11 @@ module.exports = (function () {
                     },
                     set: function (text) {
                         this.$data.body = text;
-                        this.$data.count = 2048 - text.length;
+                    }
+                },
+                count: {
+                    get: function () {
+                        return this.$data.body.length;
                     }
                 }
             },

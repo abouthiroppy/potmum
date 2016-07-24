@@ -21,8 +21,9 @@ module.exports = {
         bundle: [
             path.join(paths.src, '/assets.js'),
             path.join(paths.nodeModules, '/normalize.css/normalize.css'),
+            path.join(paths.nodeModules, '/flexboxgrid/css/flexboxgrid.css'),
             path.join(paths.nodeModules, '/font-awesome/css/font-awesome.css'),
-            path.join(paths.src, '/index.scss'),
+            path.join(paths.src, '/stylesheets/index.scss'),
             path.join(paths.src, '/index.js')
         ],
         vendor: [

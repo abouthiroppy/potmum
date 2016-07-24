@@ -3,63 +3,39 @@ html
   head
     = render('/commons/meta')
   body
-    nav.global-header.uk-navbar
-      div class=(content_for?(:full_mode) ? 'uk-width-1-1' : 'uk-container uk-container-center')
-        a.uk-navbar-brand href='/'
-          img src=webpack_path('potmum-logo.png') width=129 height=24 alt='Potmum'
-        .uk-navbar-content
-          form.uk-form.uk-margin-remove.uk-display-inline-block action=search_path method='get'
-            input type='search' name='q' value=@search_word placeholder='キーワードを入力'
-        .uk-navbar-flip
-          ul.uk-navbar-nav
-            - if current_user
-              li
-                a href=new_article_path(name: current_user.name)
-                  i.fa.fa-plus
-                  | &nbsp;新規作成
-              li.uk-parent data-uk-dropdown=true
-                a href='javascript:void(0)'
-                  img.avatar-image src=current_user.decorate.avatar_url width=24 height=24
-                .uk-dropdown.uk-dropdown-navbar
-                  ul.uk-nav.uk-nav-navbar
+    #app.app
+      nav.global-nav
+        a.global-nav-bland href=root_path title='Potmum'
+          img src=webpack_path('potmum-symbol.png') alt='Potmum'
+        ul.global-nav-menu
+          li
+            a href='#' title="検索"
+              i.fa.fa-search
+          - if current_user
+            li
+              a href=new_article_path(name: current_user.name) title='新しい記事の作成'
+                i.fa.fa-plus
+        ul.global-nav-actions
+          - if current_user
+            li
+              a href=user_path(name: current_user.name)
+                img.global-nav-actions__user-icon src=current_user.decorate.avatar_url
+                /
+                  li
+                    a href=session_path data-method='delete'
+                      | ログアウト
+          - else
+            li
+              a href='#'
+                i.fa.fa-sign-in
+                /
+                  - GlobalSetting.auth_methods.each do |method|
                     li
-                      a href=user_path(name: current_user.name)
-                        | マイページ
-                    li
-                      a href=setting_path
-                        | 設定
-                    li
-                      a href=session_path data-method='delete'
-                        | ログアウト
-            - else
-              li.uk-parent data-uk-dropdown=true
-                a href='javascript:void(0)'
-                  | ログイン
-                .uk-dropdown.uk-dropdown-navbar
-                  ul.uk-nav.uk-nav-navbar
-                    - GlobalSetting.auth_methods.each do |method|
-                      li
-                        a href="/auth/#{method[:path]}"
-                          = "#{method[:name]} でログイン"
+                      a href="/auth/#{method[:path]}"
+                        = "#{method[:name]} でログイン"
 
-    = yield
-
-    - unless content_for?(:full_mode)
-      .global-footer.uk-margin-large-top.uk-margin-large-bottom
-        .uk-text-center.uk-text-muted
-          | - Potmum -
-
-      - if global_alert
-        .global-alert = global_alert
-
-    .global-notify
-      .uk-container.uk-container-center
-        - flash.each do |key, value|
-          div class="uk-alert uk-alert-#{key}" data-uk-alert=true
-            a.uk-alert-close.uk-close
-              i.fa.fa-close
-            = value
-        - flash.clear
+      main.main
+        = yield
 
     / mathjax
     script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js'
@@ -82,5 +58,3 @@ html
     = javascript_include_tag 'application'
     script src=webpack_path('vendor.js')
     script src=webpack_path('bundle.js')
-    javascript:
-      $(".uk-alert").uk('alert');

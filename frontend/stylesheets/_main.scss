@@ -9,13 +9,13 @@ html, body {
 }
 
 ::-moz-selection {
-  background: lighten($base-color-light, 15%);
+  background: rgba(#81d7fe, .6);
   color: inherit;
   text-shadow: none;
 }
 
 ::selection {
-  background: lighten($base-color-light, 15%);
+  background: rgba(#81d7fe, .6);
   color: inherit;
   text-shadow: none;
 }
@@ -39,10 +39,6 @@ q, blockquote {
       border-radius: 15px;
       background: $base-color-mid-dark;
       color: #fff;
-
-      //@include input-placeholder {
-      //  color: $base-color-light;
-      //}
     }
   }
 
