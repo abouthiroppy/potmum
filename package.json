@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "build": "webpack --optimize-minimize",
-    "dev": "webpack-dev-server",
-    "watch": "webpack -w"
+    "dev": "webpack-dev-server --hot --inline"
   },
   "author": "ru_shalm",
   "license": "MIT",

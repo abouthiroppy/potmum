@@ -47,6 +47,8 @@ gem 'html-pipeline-nico_link'
 gem 'dotenv-rails'
 gem 'foreman'
 
+gem 'konpow', github: 'rutan/konpow'
+
 group :production do
   gem 'puma'
   gem 'pg'

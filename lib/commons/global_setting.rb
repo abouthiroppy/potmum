@@ -157,6 +157,6 @@ module GlobalSetting
   end
 
   def self.development_asset_server
-    ENV['DEVELOPMENT_ASSET_SERVER'] || 'http://localhost:8080/assets'
+    ENV['DEVELOPMENT_ASSET_SERVER'] || 'http://localhost:8080'
   end
 end

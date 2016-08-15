@@ -6,7 +6,7 @@ html
     #app.app
       nav.global-nav
         a.global-nav-bland href=root_path title='Potmum'
-          img src=webpack_path('potmum-symbol.png') alt='Potmum'
+          img src=asset_pack_path('potmum-symbol.png') alt='Potmum'
         ul.global-nav-menu
           li
             a href='#' title="検索"
@@ -56,5 +56,5 @@ html
 
     / js
     = javascript_include_tag 'application'
-    script src=webpack_path('vendor.js')
-    script src=webpack_path('bundle.js')
+    script src=asset_pack_path('vendor.js')
+    script src=asset_pack_path('bundle.js')

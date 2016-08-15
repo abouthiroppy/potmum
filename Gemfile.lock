@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/rutan/konpow.git
+  revision: 4c65bd7e512c897cf7b570b28caec453c2aa9bde
+  specs:
+    konpow (0.1.0)
+      activesupport (>= 4.0.0)
+
+GIT
   remote: git://github.com/rutan/qiita-markdown.git
   revision: 078dfcc52a1ac082419f77d97418999991fa349c
   branch: remove_linguist
@@ -454,6 +461,7 @@ DEPENDENCIES
   html-pipeline-nico_link
   jquery-rails
   kaminari
+  konpow!
   mini_magick
   nokogiri (= 1.6.5)
   oj
